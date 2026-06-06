@@ -32,6 +32,15 @@ function App() {
     const handleSendMessage = async (message: string) => {
         if (!message.trim()) return;
 
+        // Add user message to UI immediately
+        const userMessage: ChatMessage = {
+            id: `temp-user-${Date.now()}`,
+            sender: 'user',
+            content: message,
+            timestamp: new Date().toISOString(),
+        };
+
+        setMessages((prevMessages) => [...prevMessages, userMessage]);
         setIsLoading(true);
         setError(null);
 
@@ -45,16 +54,23 @@ function App() {
                 localStorage.setItem('conversationId', newConvId);
             }
 
-            // Add messages to the list
-            setMessages((prevMessages) => [
-                ...prevMessages,
-                response.userMessage,
-                response.aiMessage,
-            ]);
+            // Update user message with real ID and add AI response
+            setMessages((prevMessages) => {
+                const updatedMessages = prevMessages.map((msg) =>
+                    msg.id.startsWith('temp-user-')
+                        ? { ...msg, id: response.userMessage.id }
+                        : msg
+                );
+                return [...updatedMessages, response.aiMessage];
+            });
             setError(null);
         } catch (err) {
             const errorMessage = err instanceof Error ? err.message : 'An error occurred';
             setError(errorMessage);
+            // Remove the temporary user message on error
+            setMessages((prevMessages) =>
+                prevMessages.filter((msg) => !msg.id.startsWith('temp-user-'))
+            );
             console.error('Error sending message:', err);
         } finally {
             setIsLoading(false);

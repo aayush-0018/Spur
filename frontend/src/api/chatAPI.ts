@@ -7,6 +7,9 @@ export interface ChatMessage {
     content: string;
     sender: 'user' | 'ai';
     timestamp: string;
+    conversationId?: string;
+    index?: number;
+    createdAt?: string;
 }
 
 export interface ConversationResponse {
