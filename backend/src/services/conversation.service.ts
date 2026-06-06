@@ -77,7 +77,7 @@ export async function getConversationMessages(
         orderBy: { createdAt: "asc" },
     });
 
-    return messages.map((msg) => ({
+    return messages.map((msg: any) => ({
         id: msg.id,
         content: msg.content,
         sender: msg.sender as "user" | "ai",
@@ -108,7 +108,7 @@ export async function getConversation(
         id: conversation.id,
         createdAt: conversation.createdAt,
         updatedAt: conversation.updatedAt,
-        messages: conversation.messages.map((msg) => ({
+        messages: conversation.messages.map((msg: any) => ({
             id: msg.id,
             content: msg.content,
             sender: msg.sender as "user" | "ai",
