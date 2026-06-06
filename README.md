@@ -1,5 +1,7 @@
 # 🤖 Spur - AI Live Chat Support Agent
 
+** Run the backedn url - https://spur-backend2.onrender.com/ and wait for 30 seconds then run then frontend url - https://spur-frontend-eene.onrender.com/ and wait for 30 seconds.
+
 An intelligent full-stack AI customer support platform powered by **Google Gemini 2.5 Flash**, featuring contextual conversations, persistent chat history, PostgreSQL storage, and production-ready deployment on Render.
 
 ![React](https://img.shields.io/badge/React-18-blue)
