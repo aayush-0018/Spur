@@ -437,9 +437,9 @@ Gemini 2.5 Flash API
 ## Backend
 
 ```env
-DATABASE_URL=postgresql://user:password@host:5432/database
+DATABASE_URL=postgresql://ai_chat_user:goRFyJCoJkytc9hBGGmL9Xeo4Zw8yLDK@dpg-d8hvulldt1ts73epbdm0-a.oregon-postgres.render.com/ai_chat_db_afys
 
-GEMINI_API_KEY=your_gemini_api_key
+GEMINI_API_KEY=xx
 
 PORT=3001
 
@@ -449,7 +449,7 @@ NODE_ENV=production
 ## Frontend
 
 ```env
-REACT_APP_API_URL=https://your-backend.onrender.com/api
+REACT_APP_API_URL=https://spur-backend2.onrender.com/
 ```
 
 ---
