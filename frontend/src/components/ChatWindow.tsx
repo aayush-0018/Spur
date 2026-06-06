@@ -47,7 +47,6 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({
         <div className="chat-window">
             <div className="chat-header">
                 <h1>💬 TechHub Support Chat</h1>
-                <p>Ask me anything about our products and policies</p>
                 {hasMessages && (
                     <button className="new-chat-btn" onClick={onNewChat} title="Start a new conversation">
                         ➕ New Chat

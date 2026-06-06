@@ -24,12 +24,6 @@
     font-weight: 600;
 }
 
-.chat-header p {
-    margin: 0;
-    font-size: 14px;
-    opacity: 0.9;
-}
-
 .new-chat-btn {
     padding: 10px 16px;
     background: rgba(255, 255, 255, 0.2);
@@ -275,15 +269,6 @@
         margin: 0;
     }
 
-    .chat-header p {
-        margin: 0;
-        position: absolute;
-        left: 24px;
-        bottom: 24px;
-        width: calc(100% - 48px);
-        max-width: 400px;
-    }
-
     .new-chat-btn {
         flex-shrink: 0;
     }
@@ -298,11 +283,6 @@
 
     .chat-header h1 {
         font-size: 22px;
-    }
-
-    .chat-header p {
-        font-size: 12px;
-        margin: 0;
     }
 
     .new-chat-btn {
